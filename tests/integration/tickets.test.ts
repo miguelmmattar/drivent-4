@@ -13,7 +13,7 @@ beforeAll(async () => {
 });
 
 beforeEach(async () => {
-  await cleanDb();
+  await cleanDb(); 
 });
 
 const server = supertest(app);

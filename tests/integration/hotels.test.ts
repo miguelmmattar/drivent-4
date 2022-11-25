@@ -183,6 +183,54 @@ describe("GET /hotels/:hotelId", () => {
   
       expect(response.status).toEqual(httpStatus.BAD_REQUEST);
     });
+
+    /* it("should respond with status 404 when user doesnt have an enrollment yet", async () => {
+      const token = await generateValidToken();
+      
+      const response = await server.get("/hotels").set("Authorization", `Bearer ${token}`);
+      
+      expect(response.status).toEqual(httpStatus.NOT_FOUND);
+    });
+      
+    it("should respond with status 404 when user doesnt have a ticket yet", async () => {
+      const user = await createUser();
+      const token = await generateValidToken(user);
+      await createEnrollmentWithAddress(user);
+      
+      const response = await server.get("/hotels").set("Authorization", `Bearer ${token}`);
+      
+      expect(response.status).toEqual(httpStatus.NOT_FOUND);
+    });
+
+    it("should respond with status 400 when ticket type does not include hotel", async () => {
+      const user = await createUser();
+      const token = await generateValidToken(user);
+      const enrollment = await createEnrollmentWithAddress(user);
+      let ticketType = await createTicketType();
+
+      ticketType = await updateTicketType(ticketType.id, false);
+
+      const ticket = await createTicket(enrollment.id, ticketType.id, TicketStatus.PAID);
+      
+      const response = await server.get("/hotels").set("Authorization", `Bearer ${token}`);
+      
+      expect(response.status).toEqual(httpStatus.BAD_REQUEST);
+    });
+
+    it("should respond with status 402 when ticket status is not PAID", async () => {
+      const user = await createUser();
+      const token = await generateValidToken(user);
+      const enrollment = await createEnrollmentWithAddress(user);
+      let ticketType = await createTicketType();
+
+      ticketType = await updateTicketType(ticketType.id, true);
+
+      const ticket = await createTicket(enrollment.id, ticketType.id, TicketStatus.RESERVED);
+      
+      const response = await server.get("/hotels").set("Authorization", `Bearer ${token}`);
+      
+      expect(response.status).toEqual(httpStatus.PAYMENT_REQUIRED);
+    }); */
   
     it("should respond with status 404 when given hotel id doesnt exist", async () => {
       const user = await createUser();

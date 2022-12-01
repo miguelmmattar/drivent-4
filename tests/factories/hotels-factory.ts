@@ -19,3 +19,14 @@ export async function createRoom(hotelId: number) {
     },
   });
 }
+
+export async function updateRoomCapacity(id: number) {
+  return prisma.room.update({
+    where: {
+      id,
+    },    
+    data: {
+      capacity: 1,
+    },
+  });
+}

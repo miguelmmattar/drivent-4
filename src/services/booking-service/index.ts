@@ -3,7 +3,6 @@ import bookingRepository from "@/repositories/booking-repository";
 import enrollmentRepository from "@/repositories/enrollment-repository";
 import hotelsRepository from "@/repositories/hotels-repository";
 import ticketRepository from "@/repositories/ticket-repository";
-import { Booking } from "@prisma/client";
 
 async function getBookingByUserId(userId: number) {
   const enrollment = await enrollmentRepository.findWithAddressByUserId(userId);

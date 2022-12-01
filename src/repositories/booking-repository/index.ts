@@ -1,6 +1,4 @@
 import { prisma } from "@/config";
-import { Booking, Room } from "@prisma/client";
-import { receiveMessageOnPort } from "worker_threads";
 
 async function findBookingByUserId(userId: number) {
   return prisma.booking.findFirst({

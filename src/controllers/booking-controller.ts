@@ -1,6 +1,5 @@
 import { AuthenticatedRequest } from "@/middlewares";
 import bookingService from "@/services/booking-service";
-import { Console } from "console";
 import { Response } from "express";
 import httpStatus from "http-status";
 

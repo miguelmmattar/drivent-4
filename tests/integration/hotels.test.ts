@@ -183,7 +183,7 @@ describe("GET /hotels/:hotelId", () => {
       expect(response.status).toEqual(httpStatus.BAD_REQUEST);
     });
 
-    /* it("should respond with status 404 when user doesnt have an enrollment yet", async () => {
+    it("should respond with status 404 when user doesnt have an enrollment yet", async () => {
       const token = await generateValidToken();
       
       const response = await server.get("/hotels").set("Authorization", `Bearer ${token}`);
@@ -229,7 +229,7 @@ describe("GET /hotels/:hotelId", () => {
       const response = await server.get("/hotels").set("Authorization", `Bearer ${token}`);
       
       expect(response.status).toEqual(httpStatus.PAYMENT_REQUIRED);
-    }); */
+    });
   
     it("should respond with status 404 when given hotel id doesnt exist", async () => {
       const user = await createUser();
